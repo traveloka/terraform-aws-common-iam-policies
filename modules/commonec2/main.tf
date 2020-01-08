@@ -7,13 +7,15 @@ data "aws_iam_policy_document" "policy" {
     resources = ["*"]
   }
 
-  # Allow creation of log streams and retention policies on the log group
+  # Allow listing and creation of log streams
+  # Allow placement of retention policy on the log group
   statement {
     sid    = "2"
     effect = "Allow"
 
     actions = [
       "logs:CreateLogStream",
+      "logs:DescribeLogStreams",
       "logs:PutRetentionPolicy",
     ]
 
