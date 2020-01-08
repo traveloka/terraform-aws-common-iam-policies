@@ -1,5 +1,5 @@
 # terraform-aws-common-iam-policies/commonec2
-This module is meant to create an IAM Policy for commonec2.
+This module is meant to create an IAM Policy for commonec2. Commonec2 policy is a list of policy that commonly used in multi-account.
 
 ## Usage
 
