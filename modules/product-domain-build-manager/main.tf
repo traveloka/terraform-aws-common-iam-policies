@@ -92,9 +92,9 @@ data "aws_iam_policy_document" "policy" {
     effect = "Allow"
 
     actions = [
-      "codebuild:InvalidateProjectCache",
       "codebuild:DeleteProject",
       "codebuild:DeleteWebhook",
+      "codebuild:InvalidateProjectCache",
       "codebuild:UpdateProject",
       "codebuild:UpdateWebhook",
     ]
