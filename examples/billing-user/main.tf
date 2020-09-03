@@ -24,6 +24,7 @@ module "aws-common-iam-policies_billing-user" {
 # Attach the policy to the role as inline policy
 resource "aws_iam_role_policy" "billing-user" {
   name   = "BillingUser"
-  role   = "${module.aws-iam-role_billing-user.role_name}"
-  policy = "${module.aws-common-iam-policies_billing-user.policy_json}"
+  role   = module.aws-iam-role_billing-user.role_name
+  policy = module.aws-common-iam-policies_billing-user.policy_json
 }
+

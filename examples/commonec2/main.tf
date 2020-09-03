@@ -17,6 +17,7 @@ module "aws-common-iam-policies_commonec2" {
 # Attach the policy to the role as inline policy
 resource "aws_iam_role_policy" "commonec2" {
   name   = "commonec2"
-  role   = "${module.aws-iam-role_commonec2.role_name}"
-  policy = "${module.aws-common-iam-policies_commonec2.policy_json}"
+  role   = module.aws-iam-role_commonec2.role_name
+  policy = module.aws-common-iam-policies_commonec2.policy_json
 }
+

@@ -13,7 +13,7 @@ module "aws-iam-role_datadog-integration" {
   product_domain = "tsi"
   environment    = "staging"
 
-  account_id  = "${local.datadog_account_id}"
+  account_id  = local.datadog_account_id
   external_id = "SOMETHING_RANDOM_PROVIDED_BY_THE_3RD_PARTY"
 }
 
@@ -25,6 +25,7 @@ module "aws-common-iam-policies_datadog-integration" {
 # Attach the policy to the role as inline policy
 resource "aws_iam_role_policy" "datadog-integration" {
   name   = "DatadogIntegration"
-  role   = "${module.aws-iam-role_datadog-integration.role_name}"
-  policy = "${module.aws-common-iam-policies_datadog-integration.policy_json}"
+  role   = module.aws-iam-role_datadog-integration.role_name
+  policy = module.aws-common-iam-policies_datadog-integration.policy_json
 }
+

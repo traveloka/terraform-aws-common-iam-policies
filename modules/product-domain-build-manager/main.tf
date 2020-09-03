@@ -1,6 +1,8 @@
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current" {
+}
 
-data "aws_region" "current" {}
+data "aws_region" "current" {
+}
 
 data "aws_iam_policy_document" "policy" {
   statement {
@@ -221,7 +223,7 @@ data "aws_iam_policy_document" "policy" {
     ]
 
     resources = [
-      "${var.parameter_kms_key_arn}",
+      var.parameter_kms_key_arn,
     ]
   }
 
@@ -415,3 +417,4 @@ data "aws_iam_policy_document" "policy" {
     ]
   }
 }
+
